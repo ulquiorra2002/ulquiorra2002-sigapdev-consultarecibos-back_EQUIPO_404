@@ -1,0 +1,19 @@
+﻿Cambios en el back-end:
+
+- queries.js  : Nuevo query 'Perfil'
+- algoritms.js: Nueva función 'perfil'
+- index.js    : Agregado 'router.get('/perfil', algrmts.perfil)'
+
+Cambios en el front-end:
+- API.js          : Se conecta con el back-end local, no con el que esta desplegado en heroku (Cambiar cuando termine las pruebas)
+- Login.js\global : Trae el perfil de la BD y lo manda al LocalStorage
+- ListarComprobantes.js\global: Recupera el perfil y desactiva el boton Registrar si es necesario
+- Content.js\global: Recupera el perfil y desactiva el boton Agregar si es necesario
+- Combo.js\global: Recupera el perfil y desactiva el select si es necesario
+- Check.js\global: Recupera el perfil y desactiva el check si es necesario
+
+Cambios en la BBDD:
+- Creada la function 'obtener_perfil' para recuperar el perfil de un usuario
+
+Error:
+- Cuando la función 'perfil' de algoritms.js recibe el parametro del 'req.body.username' no recupera el perfil
