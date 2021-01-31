@@ -593,6 +593,13 @@ function getAlumno(req, res, next) {
     q.BuscaAlumno(req, res, next, nombre,codigo);
 }
 
+//Aca Juan
+function getRecaudacion(req, res, next) {
+    let codigo = req.params.codigo;
+    console.log(codigo);
+    q.BuscaRecaudacion(req, res, next, codigo);
+}
+//
 function getAlumnoCodigo(req, res, next) {
     let data = req.body;
     let codigo=data.codigo;
@@ -781,7 +788,9 @@ module.exports = {
     insertNewPrograma:insertNewPrograma,
     getAlumnoCodigo:getAlumnoCodigo,
     insertNewRecaudacion:insertNewRecaudacion,
-
+    //Aca Juan
+    getRecaudacion:getRecaudacion,
+    //
     getAll: getAll,
     getComplet: getComplet,
     validate: validate,

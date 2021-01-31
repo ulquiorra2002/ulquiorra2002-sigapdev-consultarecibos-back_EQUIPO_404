@@ -373,7 +373,25 @@ function BuscaAlumnoPrograma(req, res, next, codigo) {
                 return next(err);
             });
         }
-        
+        //Aca Juan
+        function BuscaRecaudacion(req, res, next,codigo) {
+ 
+            let query = `SELECT * FROM recaudaciones where cod_alumno = '${codigo}'`;
+            console.log(query);
+            db.any(query)
+                .then(function(data) {
+                    res.status(200)
+                        .json({
+                            status: 'success',
+                            data: data,
+                            message: 'Retrieved List'
+                        });
+                })
+                .catch(function(err) {
+                    return next(err);
+                });
+            }
+        //
         function BuscaAlumnoCodigo(req, res, next,codigo) {
  
             let query = `SELECT * FROM alumno where codigo = '${codigo}'`;
@@ -871,6 +889,9 @@ module.exports = {
     BuscaAlumnoCodigo:BuscaAlumnoCodigo,
     BuscaAlumno:BuscaAlumno,
     BuscaAlumnoRecaudacion:BuscaAlumnoRecaudacion,
+    //Aca Juan
+    BuscaRecaudacion:BuscaRecaudacion,
+    //
     getProgramaAlumno:getProgramaAlumno,
     SelectSiglas:SelectSiglas,
     SelectSiglanombre:SelectSiglanombre,

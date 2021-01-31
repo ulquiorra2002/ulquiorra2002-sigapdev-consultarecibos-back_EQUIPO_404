@@ -62,7 +62,9 @@ router.post('/alumno/new', algrmts.insertNewAlumno);
 router.get('/alumno/programa/:id',algrmts.getAlumnoPrograma);
 router.post('/alumno/detallado/',algrmts.getAlumno);
 router.post('/alumno/detallado/codigo/',algrmts.getAlumnoCodigo);
-
+//Aca Juan
+router.get('/recaudacion/:codigo',algrmts.getRecaudacion);
+//
 router.get('/alumno/recaudaciones/:id', algrmts.getAlumnoRecaudacion);
 router.get('/alumno/sigla/:id', algrmts.getAlumnoSigla);
 
